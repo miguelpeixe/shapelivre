@@ -25,6 +25,7 @@ add_filter("postbox_classes_shape_shape_metabox", create_function('', 'return ar
 function shape_inner_meta_box($post) {
 	$description = get_post_meta($post->ID, 'description', true);
 	$files = get_post_meta($post->ID, 'files', true);
+	$source = get_post_meta($post->ID, 'source', true);
 	?>
 	<div class="field">
 		<div class="field-meta">
@@ -32,6 +33,15 @@ function shape_inner_meta_box($post) {
 		</div>
 		<div class="field-input">
 			<textarea id="shape_description" type="text" cols="80" rows="8" name="shape_description"><?php echo $description; ?></textarea>
+		</div>
+	</div>
+	<div class="field">
+		<div class="field-meta">
+			<label for="shape_source"><?php _e('Source URL', 'shapelivre'); ?></label>
+			<p class="instruction">Source url for the shape.</p>
+		</div>
+		<div class="field-input">
+			<input id="shape_source" type="text" size="80" name="shape_source" value="<?php echo $source; ?>" />
 		</div>
 	</div>
 	<div class="field">
@@ -80,6 +90,7 @@ function shape_save_postdata($post_id) {
 
 	update_post_meta($post_id, 'description', $_POST['shape_description']);
 	update_post_meta($post_id, 'files', $_POST['files']);
+	update_post_meta($post_id, 'source', $_POST['shape_source']);
 }
 
 ?>

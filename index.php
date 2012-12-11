@@ -7,13 +7,6 @@
 				<div class="eight columns offset-by-one alpha omega">
 					<?php if(get_post_type() == 'shape') : ?>
 						<div class="four columns alpha">
-							<div class="thumbnail-container">
-								<a href="<?php echo get_post_meta($post->ID, 'shape_file', true); ?>">
-									<?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid')); ?>
-								</a>
-							</div>
-						</div>
-						<div class="four columns omega">
 							<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 							<?php echo wpautop(get_post_meta($post->ID, 'description', true)); ?>
 							<?php $files = get_post_meta($post->ID, 'files', true); ?>
@@ -29,8 +22,22 @@
 								<?php } ?>
 							</div>
 						</div>
+						<div class="four columns omega">
+							<div class="thumbnail-container">
+								<a href="<?php echo get_post_meta($post->ID, 'shape_file', true); ?>">
+									<?php the_post_thumbnail('thumbnail', array('class' => 'scale-with-grid')); ?>
+								</a>
+							</div>
+						</div>
 						<div class="clearfix"></div>
-						<p class="tags"><?php the_tags(); ?></p>
+						<div class="meta">
+							<p class="tags"> <?php the_tags('Tags: ', ', ', ''); ?></p>
+							<?php
+							$source = get_post_meta($post->ID, 'source', true);
+							if($source) { ?>
+								<p class="source">Fonte: <?php echo $source; ?></p>
+							<?php } ?>
+						</div>
 					<?php else : ?>
 						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 						<?php the_content(); ?>
