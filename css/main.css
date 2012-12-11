@@ -1,0 +1,39 @@
+body {
+	background: #f0f0f0;
+}
+
+.site-header hgroup {
+	background: #fff;
+	margin: 0 0 20px;
+}
+
+.site-header h1 {
+	line-height: 30px;
+	margin: 0;
+}
+
+.site-header h1 a {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.site-header h2 {
+	font-weight: bold;
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+#primary {
+	background: #fdfff0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#primary .thumbnail-container {
+	background: #fff;
+}
+
+#primary .thumbnail-container img {
+	display: block;
+	margin: 0 auto;
+}
