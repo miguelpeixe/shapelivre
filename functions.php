@@ -51,7 +51,17 @@ function add_shape_query( $query ) {
 }
 add_filter('pre_get_posts', 'add_shape_query');
 
+/* sidebar */
 
+register_sidebar(array(
+  'name' => 'Barra lateral direita',
+  'id' => 'right-sidebar',
+  'description' => 'Widgets da barra direita.',
+  'before_title' => '<h3>',
+  'after_title' => '</h3>',
+  'before_widget' => '<li id="%1$s" class="widget %2$s">',
+  'after_widget' => '</li>'
+));
 
 function shapelivre_wp_title($title, $sep) {
 	global $paged, $page;

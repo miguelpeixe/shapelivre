@@ -19,11 +19,13 @@ body {
 
 .site-header h2 {
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 40px;
+	line-height: 40px;
 	font-family: sans-serif;
+	margin: 40px 0;
 }
 
-#primary {
+#primary #content {
 	background: #fdfff0;
 	padding-top: 40px;
 	padding-bottom: 40px;
@@ -36,4 +38,8 @@ body {
 #primary .thumbnail-container img {
 	display: block;
 	margin: 0 auto;
+}
+
+#searchform {
+	padding: 20px 0;
 }
