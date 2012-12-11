@@ -114,3 +114,14 @@ aside#sidebar li .big-button {
 	border: 1px solid #afe678;
 	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
+
+@media only screen and (max-width: 767px) {
+	#main {
+		background: #FDFFF0;
+	}
+	.post-item,
+	aside#sidebar li {
+		margin: 0 !important;
+		border-bottom: 20px solid #f0f0f0 !important;
+	}
+}

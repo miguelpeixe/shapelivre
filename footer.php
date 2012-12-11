@@ -1,4 +1,5 @@
-	</div><!-- #main .wrapper -->
+		</div><!-- .container -->
+	</div><!-- #main --> 
 	<footer id="colophon" role="contentinfo">
 	</footer><!-- #colophon -->
 </div><!-- #page -->
