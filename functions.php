@@ -20,6 +20,8 @@ function shapelivre_styles() {
 	wp_register_style('skeleton', get_template_directory_uri() . '/css/skeleton.css', array('base'));
 	wp_register_style('main', get_template_directory_uri() . '/css/main.css', array('base', 'skeleton'));
 
+	wp_enqueue_style('font-josefin-sans', 'http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700');
+
 	wp_enqueue_style('main');
 }
 add_action('wp_enqueue_scripts', 'shapelivre_styles');
