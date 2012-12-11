@@ -4,8 +4,8 @@
 	<div id="content" role="main" class="ten columns alpha">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 			<div class="post-item">
-				<?php if(get_post_type() == 'shape') : ?>
-					<div class="eight columns offset-by-one alpha omega">
+				<div class="eight columns offset-by-one alpha omega">
+					<?php if(get_post_type() == 'shape') : ?>
 						<div class="four columns alpha">
 							<div class="thumbnail-container">
 								<a href="<?php echo get_post_meta($post->ID, 'shape_file', true); ?>">
@@ -31,11 +31,11 @@
 						</div>
 						<div class="clearfix"></div>
 						<p class="tags"><?php the_tags(); ?></p>
-					</div>
-				<?php else : ?>
-					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-					<?php the_content(); ?>
-				<?php endif; ?>
+					<?php else : ?>
+						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+						<?php the_content(); ?>
+					<?php endif; ?>
+				</div>
 				<div class="clearfix"></div>
 			</div>
 			<div class="clearfix"></div>
