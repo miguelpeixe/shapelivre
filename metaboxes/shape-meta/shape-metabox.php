@@ -24,7 +24,7 @@ add_filter("postbox_classes_shape_shape_metabox", create_function('', 'return ar
 
 function shape_inner_meta_box($post) {
 	$description = get_post_meta($post->ID, 'description', true);
-	$files = get_post_meta($post->ID, 'shapefiles', true);
+	$files = get_post_meta($post->ID, 'files', true);
 	?>
 	<div class="field">
 		<div class="field-meta">

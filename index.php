@@ -14,7 +14,7 @@
 							</div>
 						</div>
 						<div class="four columns omega">
-							<h2><?php the_title(); ?></h2>
+							<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 							<?php echo wpautop(get_post_meta($post->ID, 'description', true)); ?>
 							<?php $files = get_post_meta($post->ID, 'files', true); ?>
 							<div class="download">
@@ -33,7 +33,7 @@
 						<p class="tags"><?php the_tags(); ?></p>
 					</div>
 				<?php else : ?>
-					<h2><?php the_title(); ?></h2>
+					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 					<?php the_content(); ?>
 				<?php endif; ?>
 				<div class="clearfix"></div>
