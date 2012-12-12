@@ -24,7 +24,9 @@ add_filter("postbox_classes_shape_shape_metabox", create_function('', 'return ar
 
 function shape_inner_meta_box($post) {
 	$description = get_post_meta($post->ID, 'description', true);
-	$files = get_post_meta($post->ID, 'files', true);
+	$shp = get_post_meta($post->ID, 'shp', true);
+	$kml = get_post_meta($post->ID, 'kml', true);
+	$mbtiles = get_post_meta($post->ID, 'mbtiles', true);
 	$source = get_post_meta($post->ID, 'source', true);
 	?>
 	<div class="field">
@@ -50,7 +52,7 @@ function shape_inner_meta_box($post) {
 			<p class="instruction">Enter URL or upload file</p>
 		</div>
 		<div class="field-input">
-			<input id="shapefile" type="text" size="80" name="files[shapefile]" value="<?php echo $files['shapefile']; ?>" />
+			<input id="shapefile" type="text" size="80" name="shp" value="<?php echo $shp; ?>" />
 			<a class="button upload_file_button"><?php _e('Upload file', 'shapelivre'); ?></a>
 		</div>
 	</div>
@@ -60,7 +62,7 @@ function shape_inner_meta_box($post) {
 			<p class="instruction">Enter URL or upload file</p>
 		</div>
 		<div class="field-input">
-			<input id="kml" type="text" size="80" name="files[kml]" value="<?php echo $files['kml']; ?>" />
+			<input id="kml" type="text" size="80" name="kml" value="<?php echo $kml; ?>" />
 			<a class="button upload_file_button"><?php _e('Upload file', 'shapelivre'); ?></a>
 		</div>
 	</div>
@@ -70,7 +72,7 @@ function shape_inner_meta_box($post) {
 			<p class="instruction">Enter URL or upload file</p>
 		</div>
 		<div class="field-input">
-			<input id="mbtiles" type="text" size="80" name="files[mbtiles]" value="<?php echo $files['mbtiles']; ?>" />
+			<input id="mbtiles" type="text" size="80" name="mbtiles" value="<?php echo $mbtiles; ?>" />
 			<a class="button upload_file_button"><?php _e('Upload file', 'shapelivre'); ?></a>
 		</div>
 	</div>
@@ -89,7 +91,9 @@ function shape_save_postdata($post_id) {
 		return;
 
 	update_post_meta($post_id, 'description', $_POST['shape_description']);
-	update_post_meta($post_id, 'files', $_POST['files']);
+	update_post_meta($post_id, 'shp', $_POST['shp']);
+	update_post_meta($post_id, 'kml', $_POST['kml']);
+	update_post_meta($post_id, 'mbtiles', $_POST['mbtiles']);
 	update_post_meta($post_id, 'source', $_POST['shape_source']);
 }
 
